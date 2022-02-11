@@ -1,0 +1,27 @@
+{
+    "name": "simlabs/microsoft-store-lib",
+    "description": "A library for interaction with Microsoft Store via its REST API",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MicrosoftStoreLib\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Sim-Labs LLC",
+            "email": "support@sim-labs.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.4",
+        "symfony/serializer": "^5.4",
+        "symfony/property-info": "^5.4",
+        "doctrine/annotations": "^1.13"
+    },
+    "require-dev": {
+        "vkcom/noverify": "^0.5.2"
+    }
+}
