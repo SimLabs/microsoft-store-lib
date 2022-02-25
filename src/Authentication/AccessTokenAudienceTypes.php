@@ -22,4 +22,6 @@ class AccessTokenAudienceTypes
     /// Purchase access tokens are passed to your client app and used to generate UserPurchaseIds.
     /// </summary>
     public static string $Purchase    = "https://onestore.microsoft.com/b2b/keys/create/purchase";
+
+    public static string $Submissions = "https://manage.devcenter.microsoft.com";
 }

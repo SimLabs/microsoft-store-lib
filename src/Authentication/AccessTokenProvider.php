@@ -77,6 +77,11 @@ class AccessTokenProvider implements IAccessTokenProvider
         return $this->CreateAccessTokenAsync(AccessTokenAudienceTypes::$Purchase);
     }
 
+    public function GetSubmissionsTokenAsync(): PromiseInterface/*<AccessToken>*/
+    {
+        return $this->CreateAccessTokenAsync(AccessTokenAudienceTypes::$Submissions);
+    }
+
     /// <summary>
     /// Generates an access token based on the URI audience value passed in.
     /// provided.

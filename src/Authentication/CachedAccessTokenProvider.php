@@ -85,4 +85,9 @@ class CachedAccessTokenProvider extends AccessTokenProvider
     {
         return $this->GetTokenAsync(AccessTokenAudienceTypes::$Purchase);
     }
+
+    public function GetSubmissionsTokenAsync(): PromiseInterface
+    {
+        return $this->GetTokenAsync(AccessTokenAudienceTypes::$Submissions);
+    }
 }

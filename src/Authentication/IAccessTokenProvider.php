@@ -26,4 +26,6 @@ interface IAccessTokenProvider
     /// </summary>
     /// <returns></returns>
     public function GetPurchaseAccessTokenAsync(): PromiseInterface/*<AccessToken>*/;
+
+    public function GetSubmissionsTokenAsync(): PromiseInterface/*<AccessToken>*/;
 }

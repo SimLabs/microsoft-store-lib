@@ -140,6 +140,11 @@ class Client //: IClient
         return $this->_accessTokenProvider->GetPurchaseAccessTokenAsync();
     }
 
+    public function GetSubmissionsTokenAsync(): PromiseInterface
+    {
+        return $this->_accessTokenProvider->GetSubmissionsTokenAsync();
+    }
+
     public function CollectionsQueryAsync(CollectionsQueryRequest $request) /*: Task<CollectionsQueryResponse>*/
     {
         //  Validate that we have a UserCollectionsId
