@@ -53,7 +53,7 @@ class SubmissionsClient
 
     private function responseCallback(Response $resp, string $callDescription, ?string $responseClass = null)
     {
-        var_dump($callDescription);
+        //($callDescription);
         $status = $resp->getStatusCode();
         if($status >= 200 && $status < 300)
         {
