@@ -13,8 +13,8 @@ class IconInfo
 
 class MarketSpecificPricingsMap
 {
-    public ?string $RU;
-    public ?string $US;
+    public ?string $RU = null;
+    public ?string $US = null;
 }
 
 class SaleInfo
@@ -27,30 +27,35 @@ class SaleInfo
 }
 
 class PricingInfo {
+    public function __construct(){
+        $this->marketSpecificPricings = new MarketSpecificPricingsMap();
+    }
+
     public MarketSpecificPricingsMap $marketSpecificPricings;
-    /**
-     * @var SaleInfo[]
-     */
-    public array $sales = [];
     public string $priceId;
     public bool $isAdvancedPricingModel = true;
 
-    public function addSale(SaleInfo $item)
-    {
-        $this->sales[] = $item;
-    }
-
-    public function removeSale(SaleInfo $item)
-    {
-        foreach ($this->sales as $i => $sale)
-        {
-            if($item->name === $sale->name)
-            {
-                unset($this->sales[$i]);
-                break;
-            }
-        }
-    }
+//     /**
+//      * @var SaleInfo[]
+//      */
+//     public array $sales = [];
+//
+//     public function addSale(SaleInfo $item)
+//     {
+//         $this->sales[] = $item;
+//     }
+//
+//     public function removeSale(SaleInfo $item)
+//     {
+//         foreach ($this->sales as $i => $sale)
+//         {
+//             if($item->name === $sale->name)
+//             {
+//                 unset($this->sales[$i]);
+//                 break;
+//             }
+//         }
+//     }
 }
 
 class ListingsMap
@@ -64,9 +69,9 @@ class UpdateAddOnSubmissionResource
     public function __construct()
     {
         $this->pricing = new PricingInfo();
+        $this->listings = new ListingsMap();
     }
 
-    public string $id;
     public string $contentType;
     /**
      * @var string[]
@@ -75,7 +80,7 @@ class UpdateAddOnSubmissionResource
     public string $lifetime;
     public ListingsMap $listings;
     public PricingInfo $pricing;
-    public \DateTime $targetPublishDate;
+    public ?\DateTime $targetPublishDate = null;
     public string $targetPublishMode;
     public ?string $tag = null;
     public string $visibility;

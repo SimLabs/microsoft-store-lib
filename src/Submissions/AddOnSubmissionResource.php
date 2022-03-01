@@ -53,25 +53,9 @@ class StatusDetails
 
 class AddOnSubmissionResource extends UpdateAddOnSubmissionResource
 {
+    public string $id = '';
     public string $status = '';
     public StatusDetails $statusDetails;
     public string $fileUploadUrl = '';
     public string $friendlyName = '';
-
-    // public function getUpdateResourceSlice()
-    // {
-    //     $copy_of_object = clone $this;
-
-    //     $ref = new \ReflectionClass(AddOnSubmissionResource::class);
-    //     $ownProps = array_filter($ref->getProperties(), function ($property) use($ref) {
-    //         return $property->getDeclaringClass()->getName() == $ref->getName();
-    //     });
-
-    //     foreach($ownProps as $property)
-    //     {
-    //         unset($copy_of_object->{$property->getName()});
-    //     }
-
-    //     return $copy_of_object;
-    // }
 }
