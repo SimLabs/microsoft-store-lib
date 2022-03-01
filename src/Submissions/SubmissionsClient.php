@@ -55,16 +55,17 @@ class SubmissionsClient
     {
         //($callDescription);
         $status = $resp->getStatusCode();
+        $body = (string) $resp->getBody();
         if($status >= 200 && $status < 300)
         {
             if(!is_null($responseClass))
-                return Serializer::Get()->deserialize((string) $resp->getBody(), $responseClass, 'json');
+                return Serializer::Get()->deserialize($body, $responseClass, 'json');
             else
                 return true;
         }
         else
         {
-            throw new StoreServicesHttpResponseException("{$callDescription} failed" , $resp);
+            throw new StoreServicesHttpResponseException("{$callDescription} failed [{$status}] {$body}" , $resp);
         }
     }
 
