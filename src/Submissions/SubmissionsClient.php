@@ -51,7 +51,7 @@ class SubmissionsClient
 
     private function responseCallback(Response $resp, string $callDescription, ?string $responseClass = null, callable $retryFunction)
     {
-        //print($callDescription . "\n");
+        //print($callDescription . PHP_EOL);
         $status = $resp->getStatusCode();
         $body = (string) $resp->getBody();
         if ($status >= 200 && $status < 300) {
@@ -65,12 +65,12 @@ class SubmissionsClient
                     $message = json_decode($body, true)['message'];
                     if (preg_match('/Try again in (\d+) seconds/', $message, $matches, PREG_OFFSET_CAPTURE)) {
                         $timeout = intval($matches[1][0]) + 1;
-                        print("Rate limit is exceeded. Retrying in $timeout seconds.");
+                        print("Rate limit is exceeded. Retrying in $timeout seconds." . PHP_EOL);
                         sleep($timeout);
                         return $retryFunction();
                     }
                 } catch (\Exception $e) {
-                    print("failed to retry request: " . $e->getMessage() . "\n");
+                    print("failed to retry request: " . $e->getMessage() . PHP_EOL);
                     throw new StoreServicesHttpResponseException("{$callDescription} failed [{$status}] {$body}", $resp);
                 }
             } else {
