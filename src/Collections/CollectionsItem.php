@@ -14,6 +14,7 @@ class CollectionsItem
      */
     public \DateTime $AcquiredDate;
 
+    
     /// <summary>
     /// Indicates how the user has this entitlement.
     /// </summary>
