@@ -31,6 +31,14 @@ class CollectionsItem
     public \DateTime $EndDate;
 
     /// <summary>
+    /// The developer-specified product ID string that is assigned to the item in Partner Center. A example product ID is product123.
+    /// </summary>
+    /**
+     * @SerializedName("inAppOfferToken")
+     */
+    public string $InAppOfferToken;
+
+    /// <summary>
     /// An ID that identifies this collection item from other items that the user owns. This ID is unique per product.
     /// </summary>
     /**
