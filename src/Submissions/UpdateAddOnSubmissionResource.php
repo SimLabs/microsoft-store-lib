@@ -15,6 +15,8 @@ class MarketSpecificPricingsMap
 {
     public ?string $RU = null;
     public ?string $US = null;
+    public ?string $LB = "NotAvailable";
+    public ?string $EH = "NotAvailable";
 }
 
 class SaleInfo
