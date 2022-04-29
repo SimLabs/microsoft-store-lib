@@ -85,7 +85,7 @@ class UpdateAddOnSubmissionResource
     public ?\DateTime $targetPublishDate = null;
     public string $targetPublishMode;
     public ?string $tag = null;
-    public string $visibility;
+    public string $visibility = "Public";
 
     public function __toString()
     {
